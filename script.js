@@ -138,4 +138,22 @@ function displayHourlyWeather(data) {
     }
 }
 
+// Update the fetchWeather function to also fetch hourly weather
+function fetchWeather(city) {
+    const apiKey = 'YOUR_API_KEY'; // Replace with your API key
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Unable to fetch weather data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            displayWeather(data);
+            fetchHourlyWeather(city);
+        })
+        .catch(error => displayError(error.message));
+}
 

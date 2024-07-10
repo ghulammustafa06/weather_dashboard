@@ -81,3 +81,42 @@ button[type="submit"]:hover {
     color: red;
     font-size: 1.2rem;
 }
+
+.hourly-weather {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.hourly-weather h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.hourly-container {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px 0;
+}
+
+.hourly-item {
+    flex: 0 0 auto;
+    width: 70px;
+    text-align: center;
+    background: #333;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.hourly-item p {
+    margin: 5px 0;
+}
+
+.hourly-item img {
+    width: 40px;
+    height: 40px;
+}
