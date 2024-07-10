@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="container">
         <header>
@@ -20,19 +18,16 @@
                 </button>
             </form>
         </header>
-        </header>
         <section id="weatherInfo" class="hidden">
             <h2 id="cityName"></h2>
             <p id="temperature"></p>
             <p id="weatherDescription"></p>
+            <div class="hourly-weather">
+                <h2>Hourly Forecast</h2>
+                <div id="hourlyContainer" class="hourly-container"></div>
+            </div>
         </section>
-        <div class="hourly-weather">
-            <h2>Hourly Forecast</h2>
-            <div id="hourlyContainer" class="hourly-container"></div>
-        </div>
-        
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>

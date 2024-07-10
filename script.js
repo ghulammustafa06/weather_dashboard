@@ -157,3 +157,60 @@ function fetchWeather(city) {
         .catch(error => displayError(error.message));
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener for form submission
+    document.getElementById('locationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const city = document.getElementById('cityInput').value;
+
+        // Show loading indicator
+        showLoading();
+
+        fetchWeather(city);
+    });
+
+    // Function to display loading indicator
+    function showLoading() {
+        const weatherInfo = document.getElementById('weatherInfo');
+        weatherInfo.innerHTML = '<p>Loading...</p>';
+        weatherInfo.classList.remove('hidden');
+    }
+
+    // Function to fetch weather data
+    function fetchWeather(city) {
+        const apiKey = 'e3868b75c7c75932337e372db17ade6c'; // Replace with your API key
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('City not found');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayWeather(data);
+                fetchHourlyWeather(city);
+            })
+            .catch(error => displayError(error.message));
+    }
+
+    // Function to display weather data
+    function displayWeather(data) {
+        const cityName = data.name;
+        const temperature = data.main.temp;
+        const weatherDescription = data.weather[0].description;
+
+        document.getElementById('cityName').textContent = cityName;
+        document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
+        document.getElementById('weatherDescription').textContent = `Description: ${weatherDescription}`;
+
+        document.getElementById('weatherInfo').classList.remove('hidden');
+    }
+
+    // Function to display error messages
+    function displayError(error) {
+        document.getElementById('weatherInfo').innerHTML = `<p class="error">${error}</p>`;
+        document.getElementById('weatherInfo').classList.remove('hidden');
+    }
+});
