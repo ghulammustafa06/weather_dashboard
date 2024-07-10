@@ -98,3 +98,44 @@ function showError(error) {
     }
 }
 
+function fetchHourlyWeather(city) {
+    const apiKey = 'YOUR_API_KEY'; // Replace with your API key
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Unable to fetch hourly weather data');
+            }
+            return response.json();
+        })
+        .then(data => displayHourlyWeather(data))
+        .catch(error => displayError(error.message));
+}
+
+function displayHourlyWeather(data) {
+    const hourlyContainer = document.getElementById('hourlyContainer');
+    hourlyContainer.innerHTML = '';
+
+    for (let i = 0; i < 8; i++) { // Display next 8 hours
+        const hourlyData = data.list[i];
+        const time = new Date(hourlyData.dt * 1000).getHours();
+        const temp = hourlyData.main.temp;
+        const icon = hourlyData.weather[0].icon;
+        const humidity = hourlyData.main.humidity;
+        const windSpeed = hourlyData.wind.speed;
+
+        const hourlyItem = document.createElement('div');
+        hourlyItem.classList.add('hourly-item');
+        hourlyItem.innerHTML = `
+            <p>${time}:00</p>
+            <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather icon">
+            <p>${temp}°C</p>
+            <p>${humidity}%</p>
+            <p>${windSpeed} m/s</p>
+        `;
+        hourlyContainer.appendChild(hourlyItem);
+    }
+}
+
+
