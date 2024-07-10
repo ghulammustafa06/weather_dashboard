@@ -5,7 +5,7 @@ document.getElementById('locationForm').addEventListener('submit', function (e) 
 });
 
 function fetchWeather(city) {
-    const apiKey = 'API_key'; // Replace with your API key
+    const apiKey = 'e3868b75c7c75932337e372db17ade6c'; // Replace with your API key
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     fetch(url)
@@ -33,7 +33,7 @@ document.getElementById('locationForm').addEventListener('submit', function (e) 
 });
 
 function fetchWeather(city) {
-    const apiKey = 'API_key'; // Replace with your API key
+    const apiKey = 'e3868b75c7c75932337e372db17ade6c'; // Replace with your API key
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     fetch(url)
@@ -67,7 +67,7 @@ function showPosition(position) {
 }
 
 function fetchWeatherByCoords(lat, lon) {
-    const apiKey = 'API_key'; // Replace with your API key
+    const apiKey = 'e3868b75c7c75932337e372db17ade6c'; // Replace with your API key
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
     fetch(url)
@@ -98,8 +98,9 @@ function showError(error) {
     }
 }
 
+
 function fetchHourlyWeather(city) {
-    const apiKey = 'API_key'; // Replace with your API key
+    const apiKey = 'e3868b75c7c75932337e372db17ade6c'; // Replace with your API key
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
     fetch(url)
@@ -140,7 +141,7 @@ function displayHourlyWeather(data) {
 
 // Update the fetchWeather function to also fetch hourly weather
 function fetchWeather(city) {
-    const apiKey = 'API_key'; // Replace with your API key
+    const apiKey = 'e3868b75c7c75932337e372db17ade6c'; // Replace with your API key
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     fetch(url)
@@ -173,7 +174,7 @@ locationBtn.addEventListener("click", () => {
 });
 
 function fetchWeather(city) {
-    const apiKey = 'API_key'; // Replace with your API key
+    const apiKey = 'e3868b75c7c75932337e372db17ade6c'; // Replace with your API key
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 

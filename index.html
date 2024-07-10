@@ -10,26 +10,28 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1 class="weather_heading">Weather Dashboard</h1>
-            <form id="locationForm">
-                <label for="cityInput"></label>
-                <input type="text" id="cityInput" placeholder="Enter a city">
-                <button type="submit" style="background: none; border: none;">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </header>
-        <section id="weatherInfo" class="hidden">
-            <h2 id="cityName"></h2>
-            <p id="temperature"></p>
-            <p id="weatherDescription"></p>
-            <div class="hourly-weather">
-                <h2>Hourly Forecast</h2>
-                <div id="hourlyContainer" class="hourly-container"></div>
-            </div>
-        </section>
+    <section class="bg_image">
+        <div class="container">
+            <header>
+                <h1 class="weather_heading">Weather Dashboard</h1>
+                <form id="locationForm">
+                    <label for="cityInput"></label>
+                    <input type="text" id="cityInput" placeholder="Enter a city">
+                    <button type="submit" style="background: none; border: none;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </header>
+            <section id="weatherInfo" class="hidden">
+                <h2 id="cityName"></h2>
+                <p id="temperature"></p>
+                <p id="weatherDescription"></p>
+                <div class="hourly-weather">
+                    <h2>Hourly Forecast</h2>
+                    <div id="hourlyContainer" class="hourly-container"></div>
+                </div>
+            </section>
+    </section>
     </div>
     <script src="script.js"></script>
 </body>

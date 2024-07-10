@@ -16,8 +16,20 @@ body {
     margin-left: 20px;
 }
 
+.bg_image {
+    margin-top: 0;
+    min-height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    background-image: url('bg_img5.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 .container {
-    background: #1a7092;
+    /* background: #1a7092; */
     color: #fff;
     position: absolute;
     margin-top: 10px;
