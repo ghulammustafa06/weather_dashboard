@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%; 
+    line-height: 1;
+    background-color: #f0f0f0;
+}
+
+.weather_heading {
+    font-size: 34px;
+    color: #fff;
+    text-align: left;
+    margin-top: 42px;
+    margin-bottom: -39px;
+    margin-left: 20px;
+}
+
+.container {
+    background: #1a7092;
+    color: #fff;
+    position: absolute;
+    margin-top: 10px;
+    width: 100%;
+}
