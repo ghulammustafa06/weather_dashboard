@@ -82,6 +82,7 @@ button[type="submit"]:hover {
     font-size: 1.2rem;
 }
 
+
 .hourly-weather {
     background: #fff;
     padding: 20px;
@@ -101,15 +102,27 @@ button[type="submit"]:hover {
     padding: 10px 0;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .hourly-item {
     flex: 0 0 auto;
-    width: 70px;
+    width: 97px;
+    height: 200px;
     text-align: center;
     background: #333;
     padding: 10px;
     margin-right: 10px;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
 }
 
 .hourly-item p {
@@ -117,6 +130,6 @@ button[type="submit"]:hover {
 }
 
 .hourly-item img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 0px;
 }

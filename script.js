@@ -52,7 +52,7 @@ function displayError(error) {
     document.getElementById('weatherInfo').classList.remove('hidden');
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
@@ -82,7 +82,7 @@ function fetchWeatherByCoords(lat, lon) {
 }
 
 function showError(error) {
-    switch(error.code) {
+    switch (error.code) {
         case error.PERMISSION_DENIED:
             displayError('User denied the request for Geolocation.');
             break;
@@ -157,9 +157,9 @@ function fetchWeather(city) {
         .catch(error => displayError(error.message));
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Add event listener for form submission
-    document.getElementById('locationForm').addEventListener('submit', function(e) {
+    document.getElementById('locationForm').addEventListener('submit', function (e) {
         e.preventDefault();
         const city = document.getElementById('cityInput').value;
 
@@ -214,3 +214,47 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('weatherInfo').classList.remove('hidden');
     }
 });
+
+function fetchWeather(city) {
+    const apiKey = 'e3868b75c7c75932337e372db17ade6c'; // Replace with your API key
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    // Check if weather data for this city is already cached
+    const cachedWeather = localStorage.getItem(city);
+    if (cachedWeather) {
+        displayWeather(JSON.parse(cachedWeather));
+        fetchHourlyWeather(city); // Fetch hourly weather in case it's not cached
+        return;
+    }
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Unable to fetch weather data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Cache the fetched weather data
+            localStorage.setItem(city, JSON.stringify(data));
+            displayWeather(data);
+            fetchHourlyWeather(city); // Fetch hourly weather
+        })
+        .catch(error => displayError(error.message));
+}
+document.getElementById('locationForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const city = document.getElementById('cityInput').value;
+    fetchWeather(city);
+});
+
+
+function displayError(error) {
+    const errorElement = document.createElement('p');
+    errorElement.classList.add('error');
+    errorElement.textContent = error;
+    document.getElementById('weatherInfo').innerHTML = '';
+    document.getElementById('weatherInfo').appendChild(errorElement);
+    document.getElementById('weatherInfo').classList.remove('hidden');
+}
+
