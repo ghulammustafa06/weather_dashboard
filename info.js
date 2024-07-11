@@ -55,9 +55,35 @@ const information = [
         title: 'Desert Heat', 
         description: 'The hottest temperature ever recorded on Earth was 134°F (56.7°C) in Death Valley, California, in 1913. Desert regions experience extreme heat due to their lack of moisture and vegetation, which allows for rapid heating and cooling of the ground.' 
     },
-
+    { 
+        type: 'image', 
+        src: 'https://plus.unsplash.com/premium_photo-1664004040258-0516bfeb8fa9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8SHVycmljYW5lfGVufDB8fDB8fHww', 
+        alt: 'Image 9', 
+        title: 'Hurricane', 
+        description: 'Hurricanes can release energy equivalent to 10 atomic bombs per second! These powerful storms form over warm ocean waters and can cause devastating wind, rain, and storm surge damage when they make landfall, affecting vast areas.' 
+    },
+    { 
+        type: 'image', 
+        src: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOHx8fGVufDB8fHx8fA%3D%3D', 
+        alt: 'Image 10', 
+        title: 'Blizzard', 
+        description: 'A blizzard is a severe snowstorm with strong sustained winds of at least 35 mph and low visibility for an extended period. These winter storms can lead to dangerous conditions, including power outages, road closures, and frostbite or hypothermia for those caught outside.' 
+    },
+    { 
+        type: 'image', 
+        src: 'https://plus.unsplash.com/premium_photo-1670002263121-6d013d47eebe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8TW9uc29vbiUyMFJhaW58ZW58MHx8MHx8fDA%3D', 
+        alt: 'Image 11', 
+        title: 'Monsoon Rain', 
+        description: 'Monsoon rains are seasonal heavy rains that occur in various parts of the world, such as South Asia. These rains are crucial for agriculture but can also cause severe flooding, landslides, and disrupt daily life for millions of people.' 
+    },
+    { 
+        type: 'image', 
+        src: 'https://plus.unsplash.com/premium_photo-1671974490050-2d19bed9f522?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RHJvdWdodHxlbnwwfHwwfHx8MA%3D%3D', 
+        alt: 'Image 12', 
+        title: 'Drought', 
+        description: 'Droughts are prolonged periods of abnormally low rainfall, leading to water shortages and dry conditions. They can have severe impacts on agriculture, water supply, and ecosystems, often resulting in economic and environmental damage.' 
+    }
 ];
-
 
 const infoContainer = document.getElementById('info-container');
 
