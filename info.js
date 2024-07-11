@@ -95,3 +95,26 @@ function createInfoCards() {
             lessInfoBtn.style.display = 'inline-block'; 
         });
         cardContent.appendChild(moreInfoBtn);
+        const lessInfoBtn = document.createElement('button');
+        lessInfoBtn.classList.add('less-info-btn');
+        lessInfoBtn.textContent = 'Less Info';
+        lessInfoBtn.style.display = 'none'; 
+        lessInfoBtn.addEventListener('click', () => {
+            descriptionPreview.style.display = 'block';
+            fullDescription.style.display = 'none';
+            lessInfoBtn.style.display = 'none'; 
+            moreInfoBtn.style.display = 'inline-block';
+        });
+        cardContent.appendChild(lessInfoBtn);
+
+        const fullDescription = document.createElement('div');
+        fullDescription.classList.add('full-description');
+        fullDescription.textContent = item.description;
+        cardContent.appendChild(fullDescription);
+
+        infoCard.appendChild(cardContent);
+        infoContainer.appendChild(infoCard);
+    });
+}
+
+createInfoCards();

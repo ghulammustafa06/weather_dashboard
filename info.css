@@ -62,3 +62,25 @@ main {
     cursor: pointer;
     width: 100%;
 }
+
+.info-card .more-info-btn,
+.info-card .less-info-btn {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.info-card .more-info-btn:hover,
+.info-card .less-info-btn:hover {
+    background-color: #333;
+}
+
+.info-card .less-info-btn {
+    margin-top: -30px; /* Adjust negative margin to align with top */
+}
