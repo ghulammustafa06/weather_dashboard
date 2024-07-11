@@ -160,3 +160,41 @@ button[type="submit"]:hover {
     margin-right: 50px;
     text-align: right;
 }
+
+@media screen and (max-width: 1024px) {
+    form input[type="text"] {
+        width: 20%;
+        margin-left: 10%;
+    }
+
+    .hourly-container {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .weather_heading {
+        font-size: 28px;
+        margin-left: 10px;
+    }
+
+    .bg_image {
+        min-height: 50vh;
+    }
+
+    form {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    form input[type="text"],
+    button[type="submit"] {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .hourly-item {
+        width: 80px;
+    }
+}
+
