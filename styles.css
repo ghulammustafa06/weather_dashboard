@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -39,12 +41,13 @@ body {
 header h1 {
     margin: 0;
     font-size: 2rem;
+    font-family: "Playfair Display", serif;
 }
 
 form {
     display: flex;
     justify-content: center;
-    margin-top: -29px;
+    margin-top: -45px;
     margin-bottom: 25px;
 }
 
@@ -105,6 +108,7 @@ button[type="submit"]:hover {
 .hourly-weather h2 {
     margin-top: 0;
     font-size: 1.8rem;
+    font-family: "Playfair Display", serif;
     color: #333;
 }
 
@@ -133,6 +137,7 @@ button[type="submit"]:hover {
     padding: 10px;
     margin-right: 10px;
     border-radius: 8px;
+    margin-bottom: 40px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-out;
 }
@@ -144,4 +149,14 @@ button[type="submit"]:hover {
 .hourly-item img {
     width: 60px;
     height: 0px;
+}
+
+.info_page a {
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    margin-right: 50px;
+    text-align: right;
 }
