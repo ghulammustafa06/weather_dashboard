@@ -163,6 +163,18 @@ button[type="submit"]:hover {
     font-size: 0.9rem;
 }
 
+.hourly-item .weather-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+
+.weather-icon.sunny { color: #FFD700; }
+.weather-icon.cloudy { color: #A9A9A9; }
+.weather-icon.rainy { color: #4682B4; }
+.weather-icon.snowy { color: #FFFFFF; }
+.weather-icon.stormy { color: #4B0082; }
+
 @media screen and (max-width: 768px) {
     .hourly-weather {
         padding: 15px;

@@ -216,3 +216,32 @@ function displayError(error) {
     document.getElementById('weatherInfo').appendChild(errorElement);
     document.getElementById('weatherInfo').classList.remove('hidden');
 }
+
+function setWeatherIcon(condition) {
+    let iconClass = '';
+    switch(condition.toLowerCase()) {
+        case 'sunny':
+            iconClass = 'fas fa-sun sunny';
+            break;
+        case 'cloudy':
+            iconClass = 'fas fa-cloud cloudy';
+            break;
+        case 'rainy':
+            iconClass = 'fas fa-cloud-rain rainy';
+            break;
+        case 'snowy':
+            iconClass = 'fas fa-snowflake snowy';
+            break;
+        case 'stormy':
+            iconClass = 'fas fa-bolt stormy';
+            break;
+        default:
+            iconClass = 'fas fa-question';
+    }
+    return `<i class="weather-icon ${iconClass}"></i>`;
+}
+
+// Usage
+let weatherCondition = 'Rainy';
+let iconHTML = setWeatherIcon(weatherCondition);
+document.querySelector('.hourly-item .weather-icon').outerHTML = iconHTML;
